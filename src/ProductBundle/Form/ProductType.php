@@ -23,7 +23,7 @@ class ProductType extends AbstractType
                 'choices' => array(
                     'Mozzarella' => 'Mozzarella',
                     'Fromage blanc' => 'Fromage blanc',
-                    'Gouta' => 'Gouta',
+                    'Ricotta' => 'Ricotta',
                 ),
                 'placeholder' => 'Select',
             ))
@@ -31,12 +31,20 @@ class ProductType extends AbstractType
                 'choices' => array(
                     'موزاريلا' => 'موزاريلا',
                     'الجبن الأبيض' => 'الجبن الأبيض',
-                    'قوتة' => 'قوتة',
+                    'ريكوتا' => 'ريكوتا',
                 ),
                 'placeholder' => 'Select',
             ))
-            ->add('description', TextareaType::class)
-            ->add('description_ar', TextareaType::class)
+            ->add('description', TextareaType::class, array(
+                'attr' => [
+                    'rows' => 5,
+                ]
+            ))
+            ->add('description_ar', TextareaType::class, array(
+                'attr' => [
+                    'rows' => 5,
+                ],
+            ))
             ->add('imageFile', VichImageType::class, array(
                 'download_link'     => false,
                 'required'    => false,

@@ -22,7 +22,7 @@ translate.product-page-title: 'Produit 100% Naturels'
 translate.product-cat: 'Tout les Produits'
 translate.moz: Mozzarella
 translate.fb: 'Fromage blanc'
-translate.gouta: Goûta
+translate.gouta: Ricotta
 translate.description: Description
 translate.quantity: Quantité
 translate.addtocart: 'Ajouter au panier'
@@ -48,3 +48,5 @@ translate.customerservice: 'Service Clients'
 translate.ordersupport: 'Pour toute assistance à propos d''une commande, veuillez indiquer votre numéro de commande et la date à laquelle votre commande a été passée.'
 translate.next: Suivant
 translate.previous: Précédent
+translate.galerie: Galerie de Produits
+translate.about-us: À propos de nous

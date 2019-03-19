@@ -319,4 +319,34 @@ class DefaultController extends Controller
             'cartLogo' => $cartLogo,
         ));
     }
+
+    /**
+     * @Route("/{_locale}/about-us", name="about_page_l", requirements={"_locale" = "%app.locales%"})
+     */
+    public function aboutAction(Request $request)
+    {
+        $message = new Message();
+        $message->setEnabled(true);
+        $form = $this->get('form.factory')->create(MessageType::class, $message);
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($message);
+            $em->flush();
+            return $this->redirectToRoute('contact_page_l');
+        }
+
+        $serializer = $this->get('jms_serializer');
+        $session = $this->get('session');
+        $cartLogo = 0;
+        if ($session->has('cartElements')) {
+            $commandeJson = $session->get('cartElements');
+            $commande = $serializer->deserialize($commandeJson, Devis::class, 'json');
+            $cartLogo = count($commande->getItems());
+        }
+
+        return $this->render('default/about.html.twig', array(
+            'contact_form' => $form->createView(),
+            'cartLogo' => $cartLogo,
+        ));
+    }
 }

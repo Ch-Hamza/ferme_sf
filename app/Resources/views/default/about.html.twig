@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'default/header.html.twig' %}
+    <div class="container">
+        <div class="custom-product-title text-center mt-5"><h2>{{ 'translate.about-us'|trans }}</h2></div>
+        <div class="row custom-desc-parag justify-content-center">
+            <div class="col-7">{{ 'translate.top_descrip'|trans }}</div>
+        </div>
+
+        <!-- Start Gallery Section -->
+        <section id="gallery">
+            <div class="row justify-content-center">
+                <div class="tm-section-heading text-center">
+                    <h4>{{ 'translate.galerie'|trans }}</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="tm-portfolio zoom-gallery tm-gutter-less">
+                    <div class="row justify-content-center">
+                        {% for i in 1..35 %}
+                            <div class="tm-portfolio-item col-3">
+                                <a href="{{ asset('assets/images/portfolio/port ('~i~').jpg') }}"  class="item-inner">
+                                    <img class="lazyload" data-src="{{ asset('assets/images/portfolio/port ('~i~').jpg') }}" alt="portfolio-01">
+                                    <div class="tm-zoom-btn"></div>
+                                    <i class="tm-zoom-icon icofont icofont-drag1"></i>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- End Gallery Section -->
+    </div>
+    {% include 'default/footer.html.twig' %}
+{% endblock %}

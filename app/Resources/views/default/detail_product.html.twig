@@ -7,8 +7,8 @@
             <img class="waggle" src="{{ asset('assets/images/quality2.png') }}" alt="" style="width: 200px;height: 200px;">
         </div>
         <div class="row custom-product-row">
-            <div class="offset-1 col-5 product-image">
-                <img class="img-fluid recipe-image" src="{{ vich_uploader_asset(product,'imageFile') }}" alt="">
+            <div class="col-6 product-image row align-items-center">
+                <img class="img-fluid product-custom-image" src="{{ vich_uploader_asset(product,'imageFile') }}" alt="">
             </div>
             <div class="offset-1 col-5 product-col">
                 {% if app.request.locale == 'ar' %}
@@ -17,11 +17,13 @@
                     <div class="product-name">{{ product.name }}</div>
                 {% endif %}
                 <div class="product-description">{{ 'translate.description'|trans }}</div>
+                <br>
                 {% if app.request.locale == 'ar' %}
-                    <div>{{ product.descriptionAr }}</div>
+                    <div>{{ product.descriptionAr|raw }}</div>
                 {% else %}
-                    <div>{{ product.description }}</div>
+                    <div>{{ product.description|raw }}</div>
                 {% endif %}
+                <br>
                 <div class="product-add">
                     <div class="quantity-product">{{ 'translate.quantity'|trans }}</div>
                     {{ form_start(cart_form, {'attr': {'class': 'form-horizontal'}}) }}
