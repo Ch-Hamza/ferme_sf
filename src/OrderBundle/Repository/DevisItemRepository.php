@@ -13,6 +13,8 @@ class DevisItemRepository extends \Doctrine\ORM\EntityRepository
     public function countprods()
     {
         $qb = $this->createQueryBuilder('devis_item')
+            ->leftJoin('devis_item.devis', 'd')
+            ->where("d.enabled = true")
             ->leftJoin('devis_item.product', 'p')
             ->addSelect('p as prod')
             ->addSelect('SUM(devis_item.quantity) as total_quantity')

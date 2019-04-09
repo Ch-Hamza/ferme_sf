@@ -277,6 +277,7 @@ class DefaultController extends Controller
                 $database_commande->setEnabled(true);
                 $em = $this->getDoctrine()->getManager();
                 $em->flush();
+                $session->clear();
                 return $this->redirectToRoute('index_page');
             }
         }

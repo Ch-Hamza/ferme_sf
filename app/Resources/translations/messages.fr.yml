@@ -11,7 +11,7 @@ translate.recette_button: 'Toutes les recettes'
 translate.recette_see: 'Voir la recette complete'
 translate.desc_title: 'Créé Avec Distinction'
 translate.desc_parag: 'La minutie d’Egidio Galbani était irréprochable, et cette même passion est toujours à la base de tout ce que nous faisons - de la sélection des ingrédients de la plus haute qualité à la fourniture de nouveaux produits innovants et délicieux.'
-translate.desc_button: 'Tout Les Produits'
+translate.desc_button: 'Tous Les Produits'
 translate.form_name: Nom
 translate.form_email: Email
 translate.form_message: Message
@@ -19,7 +19,7 @@ translate.form_save: Envoyer
 translate.product-page-header: 'Nos fromages'
 translate.product-page-header1: 'Vrai goût italien, mors après mors'
 translate.product-page-title: 'Produit 100% Naturels'
-translate.product-cat: 'Tout les Produits'
+translate.product-cat: 'Tous les Produits'
 translate.moz: Mozzarella
 translate.fb: 'Fromage blanc'
 translate.gouta: Ricotta
